@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @font-face{
+	  font-family:"alfont";
+	  src:url("./ddfont/AlimamaShuHeiTi-Bold.ttf")
+    }
+    @font-face {
+      font-family: 'iconz';
+      src:url('./icon/iconfont.ttf') format('truetype');
+    } 
+    *{
+      font-family:"alfont";
+    }
+    body,div,p,a,h3,input,button,h1{
+      margin: 0;
+      padding: 0;
+      text-decoration:none;
+    }
+    h1{
+      display: inline-block;
+      position: fixed;
+      left: 20px;
+      top: 50px;
+      font-size: 50px;
+    }
+    h3{
+      font-size: 30px;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+    .signbg{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-image: url("img/signbg.jfif");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-attachment: fixed; 
+      overflow-y: hidden;
+    }
+    .sign{
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
+      width: 400px;
+      height: 400px;
+      position: fixed;
+      bottom:15%;
+      right: 50%;
+      background-color: rgb(255,255,255);
+    }
+    .user,.pass,.loginbtn{
+      font-size: 25px;
+      display: inline-block;
+      position: absolute;
+      width: 300px;
+      height: 35px;
+    }
+    .iconz {
+      font-family: "iconz" !important;
+      font-size: 35px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: absolute;
+    }
+    .iuser{
+      top: 100px;
+      left: 30px;
+    }
+    .ipass{
+      top: 200px;
+      left: 30px;
+    }
+    .user{
+      top: 100px;
+      right: 30px;
+    }
+    .pass{
+      top: 200px;
+      right: 30px;
+    }
+    .loginbtn{
+      background-color: #1c84c6;
+      color: #fff;
+      height: 45px;
+      border-radius: 50px;
+      top: 300px;
+      width: 310px;
+      right: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="signbg">
+    <h1>松阳县融媒体中心设备借还系统</h1>
+    <div class="sign">
+      <h3 >用户登录</h3>
+      <i class="iconz iuser ">&#xe829;</i>
+      <input class="user" type="text" placeholder="用户名">
+      <i class="iconz ipass">&#xe83d;</i>
+      <input class="pass" type="password" placeholder="密码">
+      <div class=""></div>
+      <button class="loginbtn">登入</button>
+      
+    </div>
+  </div>
+  <script>
+     window.addEventListener('wheel', function (event) {
+        if (event.ctrlKey === true || event.metaKey) {
+            event.preventDefault();
+        }
+     }, { passive: false });
+      window.addEventListener('DOMMouseScroll', function (event) {
+        if (event.ctrlKey === true || event.metaKey) {
+            event.preventDefault();
+        }
+  }, { passive: false })
+  </script>
+</body>
+</html>
