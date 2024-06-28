@@ -6,8 +6,20 @@
   <title>Document</title>
 </head>
 <body>
+  <button class="btn" >按钮1</button>
+  <button class="btn">按钮2</button>
+  <button class="btn">按钮3</button>
   <script>
-    Map a = new Map
+    var btns = document.querySelectorAll(".btn")
+    for(i=0; i<btns.length;i++){
+      var btn =btns[i]
+      btn.onclick = function(){
+        console.log(`按钮${i}`)
+      }
+      
+    }
+
+
   </script>
 </body>
 </html>
