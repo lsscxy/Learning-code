@@ -11,15 +11,12 @@
   <button class="btn">按钮3</button>
   <script>
     var btns = document.querySelectorAll(".btn")
-    for(i=0; i<btns.length;i++){
+    for(var i=0; i<btns.length;i++){
       var btn =btns[i]
       btn.onclick = function(){
-        console.log(`按钮${i}`)
+
       }
-      
     }
-
-
   </script>
 </body>
 </html>
