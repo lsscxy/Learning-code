@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap-datetimepicker.css">
 </head>
 <body>
   <div class="navbar navbar-default">
@@ -45,22 +46,71 @@
     <div class="col-md-2">
       <div class="bs-example" data-example-id="simple-nav-stacked">
         <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-          <li role="presentation" class="active"><a href="#xya1" aria-controls="xya1" role="tab" data-toggle="tab">Home</a></li>
-          <li role="presentation"><a href="#xyb2" aria-controls="xyb2" role="tab" data-toggle="tab">Profile</a></li>
+          <li role="presentation" class="active"><a href="#xya1" aria-controls="xya1" role="tab" data-toggle="tab">借用查询</a></li>
+          <li role="presentation"><a href="#xyb2" aria-controls="xyb2" role="tab" data-toggle="tab">归还查询</a></li>
         </ul>
       </div>
     </div>
       <div class="tab-content col-md-10">
         <div role="tabpanel" class="tab-pane active" id="xya1">
-          <ol class="breadcrumb col-md-10">
-            <li class="active">Home</li>
+          <ol class="breadcrumb col-md-12">
+            <li >设备借用查询</li>
+          </ol>
+        <label for="stratTime1">开始时间:</label>
+        <input class="stratTime" name="stratTime1" type="text"  size="16">
+        <label for="stratTime2" class="col-md-offset-1">结束时间:</label>
+        <input class="endTime" name="stratTime2" type="text" " size="16">
+        <button type="button" class="btn btn-primary col-md-offset-1">查询</button>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="xyb2">
+          <ol class="breadcrumb col-md-12">
+            <li >设备归还查询</li>
           </ol>
         </div>
-        <div role="tabpanel" class="tab-pane" id="xyb2">b</div>
       </div>
   </div>
   <script src="./jq/jquery-3.7.1.min.js"></script>
   <script src="./js/bootstrap.js"></script>
+  <script src="./js/bootstrap-datetimepicker.js"></script>
+  <script src="./js/bootstrap-datetimepicker.zh-CN.js"></script>
+   <script type="text/javascript">
+     $(".stratTime").datetimepicker({　
+    format: 'yyyy-mm-dd',
+    language: 'zh-CN',
+    weekStart: 1,
+    todayBtn: 1,//显示‘今日’按钮
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,  //Number, String. 默认值：0, 'hour'，日期时间选择器所能够提供的最精确的时间选择视图。
+    forceParse: 0,
+    autoclose: true,  
+    pickerPosition:'bottom-left',
+    endDate:new Date(),
+    }).on('changeDate',function(ev){
+        var starttime=$(".stratTime").val();
+        $(".endTime").datetimepicker('setStartDate',starttime);
+        $(".stratTime").datetimepicker('hide');
+      });
+$(".endTime").datetimepicker({　
+    format: 'yyyy-mm-dd',
+    language: 'zh-CN',
+    weekStart: 1,
+    todayBtn: 1,//显示‘今日’按钮
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,  //Number, String. 默认值：0, 'hour'，日期时间选择器所能够提供的最精确的时间选择视图。
+    forceParse: 0,
+    autoclose: true,  
+    pickerPosition:'bottom-left',
+    endDate: new Date(),
+  }).on('changeDate',function(ev){
+      var endtime=$(".endTime").val();
+      $(".stratTime").datetimepicker('setEndDate',endtime);
+      $(".endTime").datetimepicker('hide'); 
+      });
+  </script>
 </body>
 
 </html>
