@@ -6,17 +6,14 @@
   <title>Document</title>
 </head>
 <body>
-  <button class="btn" >按钮1</button>
-  <button class="btn">按钮2</button>
-  <button class="btn">按钮3</button>
+  <h1 class="time"></h1>
   <script>
-    var btns = document.querySelectorAll(".btn")
-    for(var i=0; i<btns.length;i++){
-      var btn =btns[i]
-      btn.onclick = function(){
+    var time1 = document.querySelector(".time")     
+      setInterval(() => {
+        var time2 =  new Date()
+        time1.textContent = time2
+      }, 1);
 
-      }
-    }
   </script>
 </body>
 </html>
